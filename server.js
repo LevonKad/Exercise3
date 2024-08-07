@@ -4,12 +4,12 @@ const path = require('path');
 const app = express();
 const port = process.env.PORT || 3000;
 
-/ Middleware to parse the body of the request
+// Middleware to parse the body of the request
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Serve the HTML form
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
 // Handle form submission
